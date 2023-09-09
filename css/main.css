@@ -1,14 +1,18 @@
 @font-face {
   font-family: light;
-  src: url(/css/fonts/Ubuntu-Light.ttf);
+  src: url(/css/fonts/Roboto-Light.ttf);
 }
 @font-face {
   font-family: bold;
-  src: url(/css/fonts/Ubuntu-Bold.ttf);
+  src: url(/css/fonts/Roboto-Bold.ttf);
 }
 @font-face {
   font-family: comic;
   src: url(/css/fonts/ComicNeue-Bold.ttf);
+}
+@font-face {
+  font-family: cartoon;
+  src: url(/css/fonts/LuckiestGuy.ttf);
 }
 * {
   margin: 0;
@@ -31,12 +35,10 @@ body::-webkit-scrollbar {
 
 h1, h2 {
   margin: 15px;
-  font-family: bold;
 }
 
 p, a, li {
   margin: 10px;
-  font-family: light;
 }
 
 nav {
@@ -63,30 +65,41 @@ nav img {
   margin: 0;
   margin-bottom: 50px;
   padding-top: 20vh;
-  font-size: 40px;
+  font-size: 50px;
+  font-family: bold;
 }
 .slider #desc_section p {
   font-weight: 900;
   font-size: 20px;
   padding: 20px;
   line-height: 30px;
+  font-family: light;
 }
 .slider #desc_section .serverLink {
   font-family: comic;
-  color: green;
+  color: brown;
   font-size: 35px;
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1.5px black;
 }
 .slider #join_section {
   height: 90.1vh;
-  background: url("/css/img/newsCover.png") center;
+  background: url("/css/img/joinBackground.gif") center;
   background-size: cover;
   text-align: center;
+  color: white;
+  font-family: cartoon;
+  -webkit-text-stroke: 1px black;
 }
 .slider #join_section h1 {
   margin-top: 0;
   padding-top: 15vh;
-  font-size: 40px;
+  font-size: 55px;
+  margin-bottom: 60px;
+}
+.slider #join_section p {
+  font-size: 25px;
+  margin: 50px;
+  -webkit-text-stroke-width: 1.5px;
 }
 
 .scrollDown {

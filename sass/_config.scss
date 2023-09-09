@@ -1,14 +1,18 @@
 @font-face {
     font-family: light;
-    src: url(/css/fonts/Ubuntu-Light.ttf);
+    src: url(/css/fonts/Roboto-Light.ttf);
 }
 @font-face {
     font-family: bold;
-    src: url(/css/fonts/Ubuntu-Bold.ttf);
+    src: url(/css/fonts/Roboto-Bold.ttf);
 }
 @font-face {
     font-family: comic;
     src: url(/css/fonts/ComicNeue-Bold.ttf);
+}
+@font-face {
+    font-family: cartoon;
+    src: url(/css/fonts/LuckiestGuy.ttf);
 }
 
 *{
@@ -32,10 +36,8 @@ body {
 
 h1, h2 {
     margin: 15px;
-    font-family: bold;
 }
 
 p, a, li {
     margin: 10px;
-    font-family: light;
 }

@@ -1,17 +1,21 @@
 let scrollIndex = 0;
+let cooldown = true;
 window.addEventListener('wheel', event => scrollDetector(event));
 
 const scrollDetector = event => {
-    if (event.deltaY == 100) {
-        scrollDown();
-    } else {
-        scrollUp();
+    if (cooldown) {
+        cooldown = false;
+        if (event.deltaY == 100) {
+            scrollDown();
+        } else {
+            scrollUp();
+        }
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
     }
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-    });
 }
 
 const scrollUp = () => {
@@ -28,6 +32,7 @@ const scrollUp = () => {
             sliderContener.style.animation = 'fadeIn 0.5s';
             setTimeout(() => {
                 sliderContener.style.opacity = 1;
+                cooldown = true;
             }, 500);
         }, 250);
     }
@@ -47,6 +52,7 @@ const scrollDown = () => {
             sliderContener.style.animation = 'fadeIn 0.5s';
             setTimeout(() => {
                 sliderContener.style.opacity = 1;
+                cooldown = true;
             }, 500);
         }, 250);
     }

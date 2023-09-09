@@ -1,6 +1,7 @@
 @import "./config";
 @import "./variables";
 
+
 nav {
     background-color: black;
     height: 100px;
@@ -22,28 +23,38 @@ nav {
             margin: 0;
             margin-bottom: 50px;
             padding-top: 20vh;
-            font-size: 40px;
+            font-size: 50px;
+            font-family: bold;
         }
         p {
             font-weight: weight(bold);
             font-size: 20px;
             padding: 20px;
             line-height: 30px;
+            font-family: light;
         }
         .serverLink {
             font-family: comic;
-            color: green;
+            color: brown;
             font-size: 35px;
-            -webkit-text-stroke: 1px black;
+            -webkit-text-stroke: 1.5px black;
         }
     }
     #join_section {
-        @include section("/css/img/newsCover.png");
+        @include section("/css/img/joinBackground.gif");
+        color: white;
+        font-family: cartoon;
+        -webkit-text-stroke: 1px black;
         h1 {
             margin-top: 0;
             padding-top: 15vh;
-            font-size: 40px;
-
+            font-size: 55px;
+            margin-bottom: 60px;
+        }
+        p {
+            font-size: 25px;
+            margin: 50px;
+            -webkit-text-stroke-width: 1.5px;
         }
     }
 }
