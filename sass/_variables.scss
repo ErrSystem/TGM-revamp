@@ -1,0 +1,18 @@
+$primaryColor: #000;
+$secondaryColor: #fff;
+$textWeights: (
+    "regular": 400,
+    "medium": 600,
+    "bold": 900
+);
+
+@function weight($size) {
+    @return map-get($textWeights, $size);
+}
+
+@mixin section($url) {
+    height: 90.1vh;
+    background: url($url) center;
+    background-size: cover;
+    text-align: center;
+}

@@ -1,0 +1,41 @@
+@font-face {
+    font-family: light;
+    src: url(/css/fonts/Ubuntu-Light.ttf);
+}
+@font-face {
+    font-family: bold;
+    src: url(/css/fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+    font-family: comic;
+    src: url(/css/fonts/ComicNeue-Bold.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all ease 0.9s;
+    &:hover {
+        transition: all ease 0.9s;
+    }    
+}
+
+body {
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+h1, h2 {
+    margin: 15px;
+    font-family: bold;
+}
+
+p, a, li {
+    margin: 10px;
+    font-family: light;
+}
