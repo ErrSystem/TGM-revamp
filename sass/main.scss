@@ -21,7 +21,6 @@ nav {
         @include section("/css/img/minecraftCover.png");
         h1 {
             @include animationSet();
-            margin: 0;
             font-size: 50px;
             font-family: bold;
         }
@@ -48,7 +47,6 @@ nav {
         -webkit-text-stroke: 1px black;
         h1 {
             @include animationSet();
-            margin-top: 0;
             font-size: 55px;
         }
         p {
@@ -56,6 +54,49 @@ nav {
             font-size: 25px;
             margin: 50px;
             -webkit-text-stroke-width: 1.5px;
+        }
+    }
+    #mods_section {
+        @include section("/css/img/modsBackground.gif");
+        h1 {
+            color: white;
+            opacity: 0;
+            font-family: bold;
+            font-size: 40px;
+        }
+        .downloadContener {
+            opacity: 0;
+            background-color: white;
+            border-radius: 5px;
+            width: 300px;
+            padding: 20px;
+            font-family: cartoon;
+            h2 {
+                padding-bottom: 5px;
+                border-bottom: 1px solid;
+            }
+            img{
+                margin-top: 15px;
+                width: 230px;
+                height: 240px;
+            }
+        }
+        .first {
+            @include modsConteners(55%, 50%);
+            box-shadow: 1px 1px 20px;
+            z-index: 2;
+        }
+        .second {
+            @include modsConteners(60%, 36%);
+            @include mobile(1150px) {
+                left: 25%;
+            }
+        }
+        .third {
+            @include modsConteners(59%, 64%);
+            @include mobile(1150px) {
+                left: 76%;
+            }
         }
     }
 }

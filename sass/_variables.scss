@@ -22,3 +22,16 @@ $textWeights: (
     padding-top: 10vh;
     margin-bottom: 50px;
 }
+
+@mixin modsConteners($top, $left) {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: $top;
+    left: $left;
+}
+
+@mixin mobile($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}

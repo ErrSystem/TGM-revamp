@@ -33,10 +33,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-h1, h2 {
-  margin: 15px;
-}
-
 p, a, li {
   margin: 10px;
 }
@@ -65,7 +61,6 @@ nav img {
   opacity: 0;
   padding-top: 10vh;
   margin-bottom: 50px;
-  margin: 0;
   font-size: 50px;
   font-family: bold;
 }
@@ -97,7 +92,6 @@ nav img {
   opacity: 0;
   padding-top: 10vh;
   margin-bottom: 50px;
-  margin-top: 0;
   font-size: 55px;
 }
 .slider #join_section p {
@@ -105,6 +99,65 @@ nav img {
   font-size: 25px;
   margin: 50px;
   -webkit-text-stroke-width: 1.5px;
+}
+.slider #mods_section {
+  height: 90.1vh;
+  background: url("/css/img/modsBackground.gif") center;
+  background-size: cover;
+  text-align: center;
+}
+.slider #mods_section h1 {
+  color: white;
+  opacity: 0;
+  font-family: bold;
+  font-size: 40px;
+}
+.slider #mods_section .downloadContener {
+  opacity: 0;
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  padding: 20px;
+  font-family: cartoon;
+}
+.slider #mods_section .downloadContener h2 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
+}
+.slider #mods_section .downloadContener img {
+  margin-top: 15px;
+  width: 230px;
+  height: 240px;
+}
+.slider #mods_section .first {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: 50%;
+  box-shadow: 1px 1px 20px;
+  z-index: 2;
+}
+.slider #mods_section .second {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 36%;
+}
+@media (max-width: 1150px) {
+  .slider #mods_section .second {
+    left: 25%;
+  }
+}
+.slider #mods_section .third {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 59%;
+  left: 64%;
+}
+@media (max-width: 1150px) {
+  .slider #mods_section .third {
+    left: 76%;
+  }
 }
 
 .scrollDown {
