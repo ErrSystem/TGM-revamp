@@ -16,3 +16,9 @@ $textWeights: (
     background-size: cover;
     text-align: center;
 }
+
+@mixin animationSet() {
+    opacity: 0;
+    padding-top: 10vh;
+    margin-bottom: 50px;
+}
