@@ -2,7 +2,7 @@ const contenermodel = document.querySelector('.downloadContener');
 let Data;
 let counter = 0;
 // get data
-fetch("/data/mods.json")
+fetch("data/mods.json")
 .then(response => response.json())
 .then(data => {
     data.forEach(mod => {
@@ -44,10 +44,8 @@ const changePositions = () => {
     const shownConteners = [document.querySelector('#first'), document.querySelector('#second'), document.querySelector('#third')];
     for (let i = 0; i < shownConteners.length; i++) {
         if (i == 0) {
-            console.log('first');
             shownConteners[i].id = 'third';
         } else if (i == 1) {
-            console.log('second')
             shownConteners[i].id = 'first';
         } else if (i == 2) {
             let nextIndex = shownConteners[i].name;

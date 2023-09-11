@@ -96,7 +96,7 @@ nav {
             }
         }
         #third {
-            @include modsConteners(59%, 64%);
+            @include modsConteners(60%, 64%);
             @include mobile(1150px) {
                 left: 76%;
             }
