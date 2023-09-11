@@ -43,7 +43,10 @@ nav {
   width: 100%;
   text-align: center;
 }
-nav img {
+nav a {
+  margin: 0;
+}
+nav a img {
   width: 250px;
   height: 100px;
 }
@@ -53,7 +56,7 @@ nav img {
 }
 .slider #desc_section {
   height: 90.1vh;
-  background: url("/css/img/minecraftCover.png") center;
+  background: url("../css/img/minecraftCover.png") center;
   background-size: cover;
   text-align: center;
 }
@@ -81,7 +84,7 @@ nav img {
 }
 .slider #join_section {
   height: 90.1vh;
-  background: url("/css/img/joinBackground.gif") center;
+  background: url("../css/img/joinBackground.gif") center;
   background-size: cover;
   text-align: center;
   color: white;
@@ -102,7 +105,7 @@ nav img {
 }
 .slider #mods_section {
   height: 90.1vh;
-  background: url("/css/img/modsBackground.gif") center;
+  background: url("../css/img/modsBackground.gif") center;
   background-size: cover;
   text-align: center;
 }
@@ -126,10 +129,11 @@ nav img {
 }
 .slider #mods_section .downloadContener img {
   margin-top: 15px;
+  border-radius: 5px;
   width: 230px;
   height: 240px;
 }
-.slider #mods_section .first {
+.slider #mods_section #first {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 55%;
@@ -137,27 +141,48 @@ nav img {
   box-shadow: 1px 1px 20px;
   z-index: 2;
 }
-.slider #mods_section .second {
+.slider #mods_section #second {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 60%;
   left: 36%;
 }
 @media (max-width: 1150px) {
-  .slider #mods_section .second {
+  .slider #mods_section #second {
     left: 25%;
   }
 }
-.slider #mods_section .third {
+.slider #mods_section #third {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 59%;
   left: 64%;
 }
 @media (max-width: 1150px) {
-  .slider #mods_section .third {
+  .slider #mods_section #third {
     left: 76%;
   }
+}
+.slider #additionalInfo_section {
+  height: 90.1vh;
+  background: url("../css/img/modsCover.png") center;
+  background-size: cover;
+  text-align: center;
+  background-repeat: repeat;
+  color: white;
+  text-align: center;
+}
+.slider #additionalInfo_section h1 {
+  font-family: bold;
+  font-size: 40px;
+  padding-top: 10vh;
+  margin-bottom: 50px;
+}
+.slider #additionalInfo_section ul {
+  opacity: 0;
+}
+.slider #additionalInfo_section li {
+  font-family: light;
 }
 
 .scrollDown {
@@ -165,6 +190,29 @@ nav img {
   top: 85vh;
   right: 50%;
   animation: scrollDownIcon 5s infinite;
+}
+
+footer {
+  background-color: black;
+  font-family: light;
+  color: white;
+  height: 85px;
+  text-align: center;
+}
+footer p {
+  float: left;
+  padding-left: 30px;
+  padding-top: 25px;
+}
+footer i {
+  float: right;
+  padding-right: 30px;
+  padding-top: 30px;
+  color: white;
+  font-size: 30px;
+}
+footer i:hover {
+  color: gray;
 }
 
 @keyframes scrollDownIcon {

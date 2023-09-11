@@ -2,7 +2,6 @@ let scrollIndex = 0;
 let cooldown = true;
 const sliderContener = document.querySelector('.slider');
 
-window.addEventListener('wheel', event => scrollDetector(event));
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         elementsFadeIn(document.querySelector('#desc_section'));
@@ -12,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const scrollDetector = event => {
     if (cooldown) {
         cooldown = false;
-        if (event.deltaY == 100) {
+        if (event.deltaY == 100 && scrollIndex != 3) {
             scrollDown();
-        } else {
+        } else if(event.deltaY == -100 && scrollIndex != 0){
             scrollUp();
         }
         window.scrollTo({
@@ -32,7 +31,6 @@ const scrollUp = () => {
     if (scrollIndex != 0) {
         const newSlide = sliderContener.children[scrollIndex-1];
         const currentSlide = sliderContener.children[scrollIndex];
-        scrollIndex--;
         sliderContener.style.animation = 'fadeOut 0.5s';
         setTimeout(() => {
             newSlide.className = '';
@@ -44,6 +42,9 @@ const scrollUp = () => {
                 elementsFadeOut(currentSlide);
             }, 500);
         }, 250);
+        scrollIndex--;
+        document.querySelector('body').style.overflow = 'hidden';
+        document.querySelector('.scrollDown').style.opacity = '1';
     }
 }
 
@@ -63,6 +64,11 @@ const scrollDown = () => {
             }, 500);
         }, 250);
         scrollIndex++;
+        if (scrollIndex == 3){
+            document.querySelector('footer').style.display = 'block';
+            document.querySelector('body').style.overflow = 'scroll';
+            document.querySelector('.scrollDown').style.opacity = '0';
+        }
     }
 }
 
@@ -82,3 +88,5 @@ const elementsFadeOut = section => {
         element.setAttribute('style', '');
     })
 }
+
+window.addEventListener('wheel', scrollDetector);

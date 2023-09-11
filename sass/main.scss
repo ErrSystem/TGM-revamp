@@ -7,9 +7,12 @@ nav {
     height: 100px;
     width: 100%;
     text-align: center;
-    img {
-        width: 250px;
-        height: 100px;
+    a {
+        margin: 0;
+        img {
+            width: 250px;
+            height: 100px;
+        }
     }
 }
 
@@ -18,7 +21,7 @@ nav {
         display: none;
     }
     #desc_section {
-        @include section("/css/img/minecraftCover.png");
+        @include section("../css/img/minecraftCover.png");
         h1 {
             @include animationSet();
             font-size: 50px;
@@ -41,7 +44,7 @@ nav {
         }
     }
     #join_section {
-        @include section("/css/img/joinBackground.gif");
+        @include section("../css/img/joinBackground.gif");
         color: white;
         font-family: cartoon;
         -webkit-text-stroke: 1px black;
@@ -57,7 +60,7 @@ nav {
         }
     }
     #mods_section {
-        @include section("/css/img/modsBackground.gif");
+        @include section("../css/img/modsBackground.gif");
         h1 {
             color: white;
             opacity: 0;
@@ -77,27 +80,47 @@ nav {
             }
             img{
                 margin-top: 15px;
+                border-radius: 5px;
                 width: 230px;
                 height: 240px;
             }
         }
-        .first {
+        #first {
             @include modsConteners(55%, 50%);
             box-shadow: 1px 1px 20px;
             z-index: 2;
         }
-        .second {
+        #second {
             @include modsConteners(60%, 36%);
             @include mobile(1150px) {
                 left: 25%;
             }
         }
-        .third {
+        #third {
             @include modsConteners(59%, 64%);
             @include mobile(1150px) {
                 left: 76%;
             }
         }
+    }
+    #additionalInfo_section {
+        @include section("../css/img/modsCover.png");
+        background-repeat: repeat;
+        color: white;
+        text-align: center;
+        h1 {
+            font-family: bold;
+            font-size: 40px;
+            padding-top: 10vh;
+            margin-bottom: 50px;
+        }
+        ul {
+            opacity: 0;
+        }
+        li {
+            font-family: light;
+        }
+
     }
 }
 
@@ -106,6 +129,29 @@ nav {
     top: 85vh;
     right: 50%;
     animation: scrollDownIcon 5s infinite;
+}
+
+footer {
+    background-color: black;
+    font-family: light;
+    color: white;
+    height: 85px;
+    text-align: center;
+    p {
+        float: left;
+        padding-left: 30px;
+        padding-top: 25px;
+    }
+    i {
+        float: right;
+        padding-right: 30px;
+        padding-top: 30px;
+        color: white;
+        font-size: 30px;
+        &:hover {
+            color: gray;
+        }
+    }
 }
 
 @keyframes scrollDownIcon {

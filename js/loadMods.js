@@ -22,13 +22,13 @@ const createContener = (name, desc, img) => {
     newContener.children[2].innerText = desc;
     switch (counter) {
         case 0:
-            newContener.className = 'downloadContener first';
+            newContener.id = 'first';
         break;
         case 1:
-            newContener.className = 'downloadContener second';
+            newContener.id = 'second';
         break;
         case 2:
-            newContener.className = 'downloadContener third';
+            newContener.id = 'third';
         break;
     }
     if (counter > 2) {
@@ -40,29 +40,27 @@ const createContener = (name, desc, img) => {
 
 const changePositions = () => {
     const conteners = Array.from(document.getElementsByClassName('downloadContener'));
-    const shownConteners = conteners.filter(element => element.className != 'downloadContener hidden');
+    const shownConteners = [document.querySelector('#first'), document.querySelector('#second'), document.querySelector('#third')];
     for (let i = 0; i < shownConteners.length; i++) {
-        console.log(i);
-        switch (shownConteners[i].className) {
-            case 'downloadContener first':
-                console.log('first');
-                shownConteners[i].className = 'downloadContener third';
-            break;
-            case 'downloadContener second':
-                console.log('second')
-                shownConteners[i].className = 'downloadContener first';
-            break;
-            case 'downloadContener third':
-                console.log('third')
-                shownConteners[i].style.display = 'none';
-                shownConteners[i].className = 'downloadContener hidden';
-                let nextIndex = conteners.indexOf(shownConteners[i]) + 1;
-                if (nextIndex == conteners.length){
-                    nextIndex = 0;
-                }
-                conteners[nextIndex].className = 'downloadContener second';
-                conteners[nextIndex].style.display = 'block';
-            break;
+        if (i == 0) {
+            console.log('first');
+            shownConteners[i].id = 'third';
+        } else if (i == 1) {
+            console.log('second')
+            shownConteners[i].id = 'first';
+        } else if (i == 2) {
+            console.log(shownConteners[i])
+            shownConteners[i].style.display = 'none';
+            shownConteners[i].id = '';
+            shownConteners[i].className = 'downloadContener hidden';
+            let nextIndex = conteners.indexOf(shownConteners[i]) + 1;
+            console.log(nextIndex)
+            if (nextIndex == conteners.length){
+                nextIndex = 0;
+            }
+            conteners[nextIndex].id = 'second';
+            conteners[nextIndex].className = 'downloadContener';
+            conteners[nextIndex].style.display = 'block';
         }
     }
 }
