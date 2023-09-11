@@ -128,9 +128,32 @@ nav a img {
 }
 .slider #mods_section .downloadContener img {
   margin-top: 15px;
+  margin-bottom: 10px;
   border-radius: 5px;
+  margin-left: 10px;
   width: 230px;
   height: 240px;
+}
+.slider #mods_section .downloadContener img:hover {
+  filter: brightness(0.5) blur(5px);
+}
+.slider #mods_section .downloadContener a {
+  opacity: 0;
+}
+.slider #mods_section .downloadContener a:hover {
+  opacity: 1;
+}
+.slider #mods_section .downloadContener a i {
+  position: absolute;
+  top: 47%;
+  right: 38%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: aqua;
+  text-shadow: 1px 1px 20px aqua;
+}
+.slider #mods_section .downloadContener a i:hover {
+  cursor: pointer;
 }
 .slider #mods_section #first {
   position: absolute;
@@ -196,6 +219,9 @@ nav a img {
   top: 85vh;
   right: 50%;
   animation: scrollDownIcon 5s infinite;
+}
+.scrollDown:hover {
+  cursor: pointer;
 }
 @media (max-width: 600px) {
   .scrollDown {

@@ -17,10 +17,25 @@ fetch("data/mods.json")
 
 const createContener = (name, desc, img, after) => {
     const newContener = contenermodel.cloneNode(true);
+    let linkNode = newContener.children[2];
+    let imgNode = newContener.children[1];
     newContener.name = after;
     newContener.children[0].innerText = name;
-    newContener.children[1].src = img;
-    newContener.children[2].innerText = desc;
+    imgNode.src = img;
+    linkNode.href = `../download/${name}.zip`;
+    imgNode.addEventListener('mouseover', () => {
+        linkNode.style.opacity = '1';
+    })
+    imgNode.addEventListener('mouseout', () => {
+        linkNode.style = '';
+    })
+    linkNode.addEventListener('mouseover', () => {
+        imgNode.style.filter = 'brightness(0.5) blur(5px)';
+    })
+    linkNode.addEventListener('mouseout', () => {
+        imgNode.style = '';
+    })
+    newContener.children[3].innerText = desc;
     switch (counter) {
         case 0:
             newContener.id = 'first';

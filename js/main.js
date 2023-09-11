@@ -6,7 +6,7 @@ const sliderContener = document.querySelector('.slider');
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         elementsFadeIn(document.querySelector('#desc_section'));
-    }, 500);
+    }, 1000);
 })
 
 const wheelDetector = event => {
@@ -26,7 +26,7 @@ const wheelDetector = event => {
     }
     setTimeout(() => {
         cooldown = true;
-    }, 500);
+    }, 1000);
 }
 
 const touchDetector = event => {
@@ -113,4 +113,6 @@ window.addEventListener('wheel', wheelDetector);
 window.addEventListener('touchstart', e => {
     touchStart = e.touches[0].clientY;
 });
+
 window.addEventListener('touchend', touchDetector);
+document.querySelector('.scrollDown').addEventListener('click', scrollDown);
