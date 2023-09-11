@@ -140,6 +140,11 @@ nav a img {
   box-shadow: 1px 1px 20px;
   z-index: 2;
 }
+@media (max-width: 600px) {
+  .slider #mods_section #first {
+    top: 65%;
+  }
+}
 .slider #mods_section #second {
   position: absolute;
   transform: translate(-50%, -50%);

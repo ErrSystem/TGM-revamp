@@ -88,6 +88,9 @@ nav {
             @include modsConteners(60%, 50%);
             box-shadow: 1px 1px 20px;
             z-index: 2;
+            @include mobile(600px){
+                top: 65%;
+            }
         }
         #second {
             @include modsConteners(64%, 36%);
