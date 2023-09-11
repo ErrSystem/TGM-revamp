@@ -2,36 +2,43 @@
     {
         "name": "Decocraft",
         "desc": "This mod brings decorations to your game!",
-        "img": "/css/img/decocraft.png"
+        "img": "/css/img/decocraft.png",
+        "after": 4
     },
     {
         "name": "Ptr Lib",
         "desc": "This mod import crafts and render libraries.",
-        "img": "/css/img/ptr lib.png"
+        "img": "/css/img/ptr lib.png",
+        "after": 5
     },
     {
         "name": "DipoMoney",
         "desc": "This mod brings currency to the game and not only that, it also adds a bank!",
-        "img": "/css/img/dipomoney.png"
+        "img": "/css/img/dipomoney.png",
+        "after": 3
     },
     {
         "name": "flans mod",
         "desc": "This mod that brings vehicles and weapons to Minecraft!",
-        "img": "/css/img/flans_mod.png"
+        "img": "/css/img/flans_mod.png",
+        "after": 6
     },
     {
         "name": "Security craft",
         "desc": "This mod adds security equipment to protect your creations!",
-        "img": "/css/img/security_craft.png"
+        "img": "/css/img/security_craft.png",
+        "after": 0
     },
     {
         "name": "Web display",
         "desc": "This mod brings the internet to Minecraft!",
-        "img": "/css/img/WEB_Display.png"
+        "img": "/css/img/WEB_Display.png",
+        "after": 1
     },
     {
         "name": "SEUS-Renewed",
         "desc": "This shader makes the game beautiful!",
-        "img": "/css/img/SEUS_Renewed.png"
+        "img": "/css/img/SEUS_Renewed.png",
+        "after": 2
     }
 ]

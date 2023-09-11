@@ -7,7 +7,7 @@ fetch("/data/mods.json")
 .then(data => {
     data.forEach(mod => {
         let index = data.indexOf(mod);
-        createContener(data[index].name, data[index].desc, data[index].img);
+        createContener(data[index].name, data[index].desc, data[index].img, data[index].after);
         if(index == data.length - 1){
             contenermodel.remove();
         }
@@ -15,8 +15,9 @@ fetch("/data/mods.json")
 })
 .catch(error => createContener('Error', 'Failed to get data: '+ error));
 
-const createContener = (name, desc, img) => {
+const createContener = (name, desc, img, after) => {
     const newContener = contenermodel.cloneNode(true);
+    newContener.name = after;
     newContener.children[0].innerText = name;
     newContener.children[1].src = img;
     newContener.children[2].innerText = desc;
@@ -49,15 +50,10 @@ const changePositions = () => {
             console.log('second')
             shownConteners[i].id = 'first';
         } else if (i == 2) {
-            console.log(shownConteners[i])
+            let nextIndex = shownConteners[i].name;
             shownConteners[i].style.display = 'none';
             shownConteners[i].id = '';
             shownConteners[i].className = 'downloadContener hidden';
-            let nextIndex = conteners.indexOf(shownConteners[i]) + 1;
-            console.log(nextIndex)
-            if (nextIndex == conteners.length){
-                nextIndex = 0;
-            }
             conteners[nextIndex].id = 'second';
             conteners[nextIndex].className = 'downloadContener';
             conteners[nextIndex].style.display = 'block';

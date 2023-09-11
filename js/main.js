@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const scrollDetector = event => {
     let direction = event.deltaY;
     if (cooldown) {
-        console.log('ez')
         cooldown = false;
         if (direction == 100 && scrollIndex != 3) {
             scrollDown();
