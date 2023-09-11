@@ -1,5 +1,6 @@
 let scrollIndex = 0;
 let cooldown = true;
+let touchStart;
 const sliderContener = document.querySelector('.slider');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,13 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500);
 })
 
-const scrollDetector = event => {
+const wheelDetector = event => {
     let direction = event.deltaY;
     if (cooldown) {
         cooldown = false;
         if (direction == 100 && scrollIndex != 3) {
             scrollDown();
         } else if(direction == -100 && scrollIndex != 0){
+            scrollUp();
+        }
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+    }
+    setTimeout(() => {
+        cooldown = true;
+    }, 500);
+}
+
+const touchDetector = event => {
+    let touchEnd = event.changedTouches[0].clientY;
+    if (cooldown){
+        if (touchEnd < touchStart && scrollIndex != 3) {
+            scrollDown();
+        } else if (touchEnd > touchStart && scrollIndex != 0){
             scrollUp();
         }
         window.scrollTo({
@@ -89,4 +109,8 @@ const elementsFadeOut = section => {
     })
 }
 
-window.addEventListener('wheel', scrollDetector);
+window.addEventListener('wheel', wheelDetector);
+window.addEventListener('touchstart', e => {
+    touchStart = e.touches[0].clientY;
+});
+window.addEventListener('touchend', touchDetector);

@@ -85,18 +85,18 @@ nav {
             }
         }
         #first {
-            @include modsConteners(55%, 50%);
+            @include modsConteners(60%, 50%);
             box-shadow: 1px 1px 20px;
             z-index: 2;
         }
         #second {
-            @include modsConteners(60%, 36%);
+            @include modsConteners(64%, 36%);
             @include mobile(1150px) {
                 left: 25%;
             }
         }
         #third {
-            @include modsConteners(60%, 64%);
+            @include modsConteners(64%, 64%);
             @include mobile(1150px) {
                 left: 76%;
             }
@@ -130,6 +130,9 @@ nav {
     top: 85vh;
     right: 50%;
     animation: scrollDownIcon 5s infinite;
+    @include mobile(600px) {
+        display: none;
+    }
 }
 
 footer {
@@ -143,6 +146,9 @@ footer {
         padding-left: 30px;
         padding-top: 36px;
         margin: 0;
+        @include mobile(600px){
+            padding-left: 15px;
+        }
     }
     i {
         float: right;
@@ -152,6 +158,18 @@ footer {
         font-size: 30px;
         &:hover {
             color: gray;
+        }
+        @include mobile(600px){
+            padding-right: 20px;
+            padding-top: 37px;
+            font-size: 20px;
+        }
+    }
+    .fa-github {
+        @include mobile(600px){
+            padding-right: 20px;
+            padding-top: 20px;
+            font-size: 20px;
         }
     }
 }

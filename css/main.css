@@ -135,7 +135,7 @@ nav a img {
 .slider #mods_section #first {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 55%;
+  top: 60%;
   left: 50%;
   box-shadow: 1px 1px 20px;
   z-index: 2;
@@ -143,7 +143,7 @@ nav a img {
 .slider #mods_section #second {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 60%;
+  top: 64%;
   left: 36%;
 }
 @media (max-width: 1150px) {
@@ -154,7 +154,7 @@ nav a img {
 .slider #mods_section #third {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 60%;
+  top: 64%;
   left: 64%;
 }
 @media (max-width: 1150px) {
@@ -192,6 +192,11 @@ nav a img {
   right: 50%;
   animation: scrollDownIcon 5s infinite;
 }
+@media (max-width: 600px) {
+  .scrollDown {
+    display: none;
+  }
+}
 
 footer {
   background-color: black;
@@ -206,6 +211,11 @@ footer p {
   padding-top: 36px;
   margin: 0;
 }
+@media (max-width: 600px) {
+  footer p {
+    padding-left: 15px;
+  }
+}
 footer i {
   float: right;
   padding-right: 30px;
@@ -215,6 +225,20 @@ footer i {
 }
 footer i:hover {
   color: gray;
+}
+@media (max-width: 600px) {
+  footer i {
+    padding-right: 20px;
+    padding-top: 37px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  footer .fa-github {
+    padding-right: 20px;
+    padding-top: 20px;
+    font-size: 20px;
+  }
 }
 
 @keyframes scrollDownIcon {
