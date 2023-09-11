@@ -9,11 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const scrollDetector = event => {
+    let direction = event.deltaY;
     if (cooldown) {
+        console.log('ez')
         cooldown = false;
-        if (event.deltaY == 100 && scrollIndex != 3) {
+        if (direction == 100 && scrollIndex != 3) {
             scrollDown();
-        } else if(event.deltaY == -100 && scrollIndex != 0){
+        } else if(direction == -100 && scrollIndex != 0){
             scrollUp();
         }
         window.scrollTo({
@@ -22,9 +24,9 @@ const scrollDetector = event => {
             behavior: "smooth",
         });
     }
-    else {
-
-    }
+    setTimeout(() => {
+        cooldown = true;
+    }, 500);
 }
 
 const scrollUp = () => {
@@ -80,7 +82,6 @@ const elementsFadeIn = section => {
         section.children[0].style.paddingTop = '15vh';
         section.children[0].style.marginBottom = '60px';
     });
-    cooldown = true;
 }
 
 const elementsFadeOut = section => {

@@ -22,10 +22,10 @@ nav {
     }
     #desc_section {
         @include section("../css/img/minecraftCover.png");
+        font-family: comic;
         h1 {
             @include animationSet();
             font-size: 50px;
-            font-family: bold;
         }
         p {
             opacity: 0;
@@ -33,11 +33,9 @@ nav {
             font-size: 20px;
             padding: 20px;
             line-height: 30px;
-            font-family: light;
         }
         .serverLink {
             opacity: 0;
-            font-family: comic;
             color: brown;
             font-size: 35px;
             -webkit-text-stroke: 1.5px black;
@@ -119,6 +117,8 @@ nav {
         }
         li {
             font-family: light;
+            margin: 0;
+            line-height: 40px;
         }
 
     }
@@ -133,14 +133,15 @@ nav {
 
 footer {
     background-color: black;
-    font-family: light;
+    font-family: comic;
     color: white;
     height: 85px;
     text-align: center;
     p {
         float: left;
         padding-left: 30px;
-        padding-top: 25px;
+        padding-top: 36px;
+        margin: 0;
     }
     i {
         float: right;
