@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const wheelDetector = event => {
     let direction = event.deltaY;
-    let target = event.target;
     if (cooldown) {
         cooldown = false;
-        if (direction == 100 && scrollIndex != 3 && target != "div.downloadContener#first") {
+        if (direction == 100 && scrollIndex != 3) {
             scrollDown();
-        } else if(direction == -100 && scrollIndex != 0 && target != "div.downloadContener#first"){
+        } else if(direction == -100 && scrollIndex != 0){
             scrollUp();
         }
         window.scrollTo({
@@ -32,10 +31,12 @@ const wheelDetector = event => {
 
 const touchDetector = event => {
     let touchEnd = event.changedTouches[0].clientY;
+    let target = event.target;
+    console.log(target)
     if (cooldown){
-        if (touchEnd < touchStart && scrollIndex != 3) {
+        if (touchEnd < touchStart && scrollIndex != 3 && target.className != "downloadImgs" && target.nodeName != 'a') {
             scrollDown();
-        } else if (touchEnd > touchStart && scrollIndex != 0){
+        } else if (touchEnd > touchStart && scrollIndex != 0 && target.className != "downloadImgs" && target.nodeName != 'a'){
             scrollUp();
         }
         window.scrollTo({

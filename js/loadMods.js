@@ -21,6 +21,7 @@ const createContener = (name, desc, img, after) => {
     let imgNode = newContener.children[1];
     newContener.name = after;
     newContener.children[0].innerText = name;
+    imgNode.className = 'downloadImgs';
     imgNode.src = img;
     linkNode.href = `https://gameur-5500.github.io/TGM-revamp/download/${name}.zip`;
     imgNode.addEventListener('mouseover', () => {
