@@ -34,9 +34,9 @@ const touchDetector = event => {
     let target = event.target;
     console.log(target)
     if (cooldown){
-        if (touchEnd < touchStart && scrollIndex != 3 && target.className != "downloadImgs" && target.nodeName != 'a') {
+        if (touchEnd < touchStart && scrollIndex != 3 && target.className != "downloadImgs" && target.className != 'fa-download') {
             scrollDown();
-        } else if (touchEnd > touchStart && scrollIndex != 0 && target.className != "downloadImgs" && target.nodeName != 'a'){
+        } else if (touchEnd > touchStart && scrollIndex != 0 && target.className != "downloadImgs" && target.className != 'fa-download'){
             scrollUp();
         }
         window.scrollTo({

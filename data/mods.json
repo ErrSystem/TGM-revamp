@@ -6,7 +6,7 @@
         "after": 4
     },
     {
-        "name": "Ptr Lib",
+        "name": "PTR LIB",
         "desc": "This mod import crafts and render libraries.",
         "img": "css/img/ptr lib.png",
         "after": 5

@@ -267,7 +267,7 @@ footer i:hover {
 @media (max-width: 600px) {
   footer .fa-github {
     padding-right: 20px;
-    padding-top: 20px;
+    padding-top: 18px;
     font-size: 20px;
   }
 }
