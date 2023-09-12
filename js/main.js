@@ -11,11 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const wheelDetector = event => {
     let direction = event.deltaY;
+    let target = event.target;
     if (cooldown) {
         cooldown = false;
-        if (direction == 100 && scrollIndex != 3) {
+        if (direction == 100 && scrollIndex != 3 && target != "div.downloadContener#first") {
             scrollDown();
-        } else if(direction == -100 && scrollIndex != 0){
+        } else if(direction == -100 && scrollIndex != 0 && target != "div.downloadContener#first"){
             scrollUp();
         }
         window.scrollTo({
