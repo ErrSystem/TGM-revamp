@@ -10,34 +10,33 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const wheelDetector = event => {
-    let direction = event.deltaY;
-    if (cooldown) {
-        cooldown = false;
-        if (direction == 100 && scrollIndex != 3) {
-            scrollDown();
-        } else if(direction == -100 && scrollIndex != 0){
-            scrollUp();
-        }
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "smooth",
-        });
+    cooldown = false;
+    let direction = Math.sign(event.deltaY);
+    if (direction == 1 && scrollIndex != 4) {
+        scrollDown();
+    } else if(direction == -1 && scrollIndex != 0){
+        scrollUp();
     }
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
     setTimeout(() => {
         cooldown = true;
-    }, 1000);
+    }, 1500);
 }
 
 const touchDetector = event => {
-    let touchEnd = event.changedTouches[0].clientY;
-    let target = event.target;
-    console.log(target)
-    if (cooldown){
-        if (touchEnd < touchStart && scrollIndex != 3 && target.className != "downloadImgs" && target.className != 'fa-download') {
+    if (cooldown) {
+        let CurrentY = event.changedTouches[0].clientY;
+        let direction = CurrentY > touchStart ? "up" : "down";
+        if (direction == 'down' && scrollIndex != 4) {
             scrollDown();
-        } else if (touchEnd > touchStart && scrollIndex != 0 && target.className != "downloadImgs" && target.className != 'fa-download'){
+            cooldown = false;
+        } else if (direction == 'up' && scrollIndex != 0){
             scrollUp();
+            cooldown = false;
         }
         window.scrollTo({
             top: 0,
@@ -45,9 +44,6 @@ const touchDetector = event => {
             behavior: "smooth",
         });
     }
-    setTimeout(() => {
-        cooldown = true;
-    }, 500);
 }
 
 const scrollUp = () => {
@@ -111,10 +107,21 @@ const elementsFadeOut = section => {
     })
 }
 
-window.addEventListener('wheel', wheelDetector);
-window.addEventListener('touchstart', e => {
-    touchStart = e.touches[0].clientY;
+window.addEventListener('wheel', event => {
+    if (cooldown) {
+        wheelDetector(event);
+        cooldown = false;
+    }
 });
-
-window.addEventListener('touchend', touchDetector);
+window.addEventListener('touchstart', e => {
+    if (cooldown) {
+        touchStart = e.touches[0].clientY
+    }
+});
+window.addEventListener('touchmove', touchDetector);
+window.addEventListener('touchend', () => {
+    setTimeout(() => {
+        cooldown = true;
+    }, 500);
+});
 document.querySelector('.scrollDown').addEventListener('click', scrollDown);
